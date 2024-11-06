@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas de Matemáticas basica</title>
-    <link rel="icon" href="qui.png" type="text/css">
-</head>
+    <title>Preguntas de Matemáticas y Lógica</title>
     <style>
+        /* Estilos generales */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f2f2f2;
@@ -14,12 +19,12 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
+            padding: 20px;
         }
 
         .container {
-            width: 80%;
-            max-width: 600px;
+            width: 100%;
+            max-width: 500px;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -29,39 +34,41 @@
         h1 {
             text-align: center;
             color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
         }
 
         .section {
             margin-bottom: 20px;
         }
 
-        .section h2 {
-            color: #007acc;
-            border-bottom: 2px solid #007acc;
-            padding-bottom: 5px;
-        }
-
         .question {
             margin: 10px 0;
         }
 
+        .question label {
+            font-size: 1rem;
+        }
+
         .question input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 1rem;
         }
 
         .submit-button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #007acc;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 1.2rem;
+            margin-top: 10px;
         }
 
         .submit-button:hover {
@@ -70,114 +77,149 @@
 
         .score {
             text-align: center;
-            font-size: 18px;
+            font-size: 1.2rem;
             margin-top: 20px;
             color: #333;
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .submit-button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .question input {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Preguntas de Matemáticas</h1>
-
-    <div class="section" id="suma">
-        <h2>Suma</h2>
-        <div class="question">
-            <label>1. ¿Cuánto es 45 + 27?</label>
-            <input type="text" class="answer" data-correct="72">
-        </div>
-        <div class="question">
-            <label>2. ¿Cuánto es 12 + 34?</label>
-            <input type="text" class="answer" data-correct="46">
-        </div>
-        <div class="question">
-            <label>3. ¿Cuánto es 78 + 22?</label>
-            <input type="text" class="answer" data-correct="100">
-        </div>
-        <div class="question">
-            <label>4. ¿Cuánto es 56 + 44?</label>
-            <input type="text" class="answer" data-correct="100">
-        </div>
-    </div>
-
-    <div class="section" id="resta">
-        <h2>Resta</h2>
-        <div class="question">
-            <label>1. ¿Cuánto es 90 - 30?</label>
-            <input type="text" class="answer" data-correct="60">
-        </div>
-        <div class="question">
-            <label>2. ¿Cuánto es 75 - 25?</label>
-            <input type="text" class="answer" data-correct="50">
-        </div>
-        <div class="question">
-            <label>3. ¿Cuánto es 50 - 15?</label>
-            <input type="text" class="answer" data-correct="35">
-        </div>
-        <div class="question">
-            <label>4. ¿Cuánto es 65 - 40?</label>
-            <input type="text" class="answer" data-correct="25">
-        </div>
-    </div>
-
-    <div class="section" id="multiplicacion">
-        <h2>Multiplicación</h2>
-        <div class="question">
-            <label>1. ¿Cuánto es 7 x 6?</label>
-            <input type="text" class="answer" data-correct="42">
-        </div>
-        <div class="question">
-            <label>2. ¿Cuánto es 8 x 9?</label>
-            <input type="text" class="answer" data-correct="72">
-        </div>
-        <div class="question">
-            <label>3. ¿Cuánto es 5 x 4?</label>
-            <input type="text" class="answer" data-correct="20">
-        </div>
-        <div class="question">
-            <label>4. ¿Cuánto es 9 x 3?</label>
-            <input type="text" class="answer" data-correct="27">
-        </div>
-    </div>
-
-    <div class="section" id="division">
-        <h2>División</h2>
-        <div class="question">
-            <label>1. ¿Cuánto es 56 ÷ 7?</label>
-            <input type="text" class="answer" data-correct="8">
-        </div>
-        <div class="question">
-            <label>2. ¿Cuánto es 72 ÷ 8?</label>
-            <input type="text" class="answer" data-correct="9">
-        </div>
-        <div class="question">
-            <label>3. ¿Cuánto es 45 ÷ 5?</label>
-            <input type="text" class="answer" data-correct="9">
-        </div>
-        <div class="question">
-            <label>4. ¿Cuánto es 36 ÷ 6?</label>
-            <input type="text" class="answer" data-correct="6">
-        </div>
-    </div>
-
+    <h1>Preguntas de Matemáticas y Lógica</h1>
+    <div id="preguntas" class="section"></div>
     <button class="submit-button" onclick="calcularPuntuacion()">Enviar Respuestas</button>
     <div class="score" id="score"></div>
 </div>
 
 <script>
+    const preguntasLogicas = [
+        { pregunta: "Si 5 gatos cazan 5 ratones en 5 minutos, ¿cuántos ratones caza 1 gato en 1 minuto?", respuesta: "1" },
+        { pregunta: "Un tren eléctrico va de norte a sur. ¿Hacia dónde va el humo?", respuesta: "no hay" },
+        { pregunta: "Si tienes una docena de huevos y se te rompe la mitad, ¿cuántos huevos quedan?", respuesta: "6" },
+        { pregunta: "¿Cuántos meses tienen 28 días?", respuesta: "12" },
+        { pregunta: "El padre de Ana tiene cinco hijas: Nana, Nene, Nini, Nono y... ¿cómo se llama la quinta hija?", respuesta: "Ana" },
+        { pregunta: "Un hombre y su hijo tienen un accidente de coche. El padre muere y el hijo es llevado al hospital. Al verlo, el doctor dice 'No puedo operarlo, es mi hijo'. ¿Quién es el doctor?", respuesta: "su madre" }
+    ];
+
+    const preguntasMatematicas = {
+        suma: [
+            { pregunta: "¿Cuánto es 45 + 27?", respuesta: "72" },
+            { pregunta: "¿Cuánto es 12 + 34?", respuesta: "46" },
+            { pregunta: "¿Cuánto es 78 + 22?", respuesta: "100" },
+            { pregunta: "¿Cuánto es 56 + 44?", respuesta: "100" }
+        ],
+        resta: [
+            { pregunta: "¿Cuánto es 90 - 30?", respuesta: "60" },
+            { pregunta: "¿Cuánto es 75 - 25?", respuesta: "50" },
+            { pregunta: "¿Cuánto es 50 - 15?", respuesta: "35" },
+            { pregunta: "¿Cuánto es 65 - 40?", respuesta: "25" }
+        ],
+        multiplicacion: [
+            { pregunta: "¿Cuánto es 7 x 6?", respuesta: "42" },
+            { pregunta: "¿Cuánto es 8 x 9?", respuesta: "72" },
+            { pregunta: "¿Cuánto es 5 x 4?", respuesta: "20" },
+            { pregunta: "¿Cuánto es 9 x 3?", respuesta: "27" }
+        ],
+        division: [
+            { pregunta: "¿Cuánto es 56 ÷ 7?", respuesta: "8" },
+            { pregunta: "¿Cuánto es 72 ÷ 8?", respuesta: "9" },
+            { pregunta: "¿Cuánto es 45 ÷ 5?", respuesta: "9" },
+            { pregunta: "¿Cuánto es 36 ÷ 6?", respuesta: "6" }
+        ]
+    };
+
+    function obtenerPreguntasDiarias() {
+        const hoy = new Date().toDateString();
+        const ultimaFecha = localStorage.getItem("ultimaFecha");
+
+        if (hoy !== ultimaFecha) {
+            localStorage.setItem("ultimaFecha", hoy);
+            localStorage.setItem("preguntas", JSON.stringify(seleccionarPreguntas()));
+        }
+
+        return JSON.parse(localStorage.getItem("preguntas"));
+    }
+
+    function seleccionarPreguntas() {
+        const preguntasSeleccionadas = {
+            logica: obtenerPreguntasAleatorias(preguntasLogicas, 2),
+            suma: obtenerPreguntasAleatorias(preguntasMatematicas.suma, 2),
+            resta: obtenerPreguntasAleatorias(preguntasMatematicas.resta, 2),
+            multiplicacion: obtenerPreguntasAleatorias(preguntasMatematicas.multiplicacion, 2),
+            division: obtenerPreguntasAleatorias(preguntasMatematicas.division, 2)
+        };
+        return preguntasSeleccionadas;
+    }
+
+    function obtenerPreguntasAleatorias(preguntas, cantidad) {
+        const seleccionadas = [];
+        const copia = [...preguntas];
+        for (let i = 0; i < cantidad; i++) {
+            const indice = Math.floor(Math.random() * copia.length);
+            seleccionadas.push(copia.splice(indice, 1)[0]);
+        }
+        return seleccionadas;
+    }
+
+    function mostrarPreguntas() {
+        const preguntas = obtenerPreguntasDiarias();
+        const contenedorPreguntas = document.getElementById("preguntas");
+
+        contenedorPreguntas.innerHTML = "";
+
+        Object.keys(preguntas).forEach(categoria => {
+            const section = document.createElement("div");
+            section.classList.add("section");
+            const title = document.createElement("h2");
+            title.textContent = categoria.charAt(0).toUpperCase() + categoria.slice(1);
+            section.appendChild(title);
+
+            preguntas[categoria].forEach((preguntaObj, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                const label = document.createElement("label");
+                label.textContent = `${index + 1}. ${preguntaObj.pregunta}`;
+                const input = document.createElement("input");
+                input.type = "text";
+                input.classList.add("answer");
+                input.dataset.correct = preguntaObj.respuesta;
+                questionDiv.appendChild(label);
+                questionDiv.appendChild(input);
+                section.appendChild(questionDiv);
+            });
+
+            contenedorPreguntas.appendChild(section);
+        });
+    }
+
     function calcularPuntuacion() {
         let totalCorrectas = 0;
         const respuestas = document.querySelectorAll('.answer');
         
         respuestas.forEach(respuesta => {
             const valorUsuario = respuesta.value.trim();
-            const valorCorrecto = respuesta.getAttribute('data-correct');
+            const valorCorrecto = respuesta.dataset.correct;
             
             if (valorUsuario === valorCorrecto) {
                 totalCorrectas++;
             }
-            // Deshabilitar el campo después de evaluar la respuesta
             respuesta.disabled = true;
         });
         
@@ -185,10 +227,14 @@
         const scoreDiv = document.getElementById('score');
         scoreDiv.textContent = `Puntuación: ${totalCorrectas} de ${puntuacionTotal}`;
         
-        // Deshabilitar el botón de enviar después de calcular la puntuación
         document.querySelector('.submit-button').disabled = true;
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        mostrarPreguntas();
+    });
 </script>
 
 </body>
 </html>
+
