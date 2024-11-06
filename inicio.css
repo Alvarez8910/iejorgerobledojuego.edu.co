@@ -76,7 +76,7 @@ p {
 .matematicas { background-color: #4caf50; }
 .quimica { background-color: #ff5722; }
 .fisica { background-color: #2196f3; }
-.matebasica { background-color: #ff9800; }
+.button.matebasica { background-color: #ff9800 !important; }
 
 .button:hover {
     transform: scale(1.1);
