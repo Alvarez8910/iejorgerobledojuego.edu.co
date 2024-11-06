@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas de Matemáticas basica</title>
+    <link rel="icon" href="qui.png" type="text/css">
+</head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: #007acc;
+            border-bottom: 2px solid #007acc;
+            padding-bottom: 5px;
+        }
+
+        .question {
+            margin: 10px 0;
+        }
+
+        .question input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-button:hover {
+            background-color: #005f99;
+        }
+
+        .score {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Preguntas de Matemáticas</h1>
+
+    <div class="section" id="suma">
+        <h2>Suma</h2>
+        <div class="question">
+            <label>1. ¿Cuánto es 45 + 27?</label>
+            <input type="text" class="answer" data-correct="72">
+        </div>
+        <div class="question">
+            <label>2. ¿Cuánto es 12 + 34?</label>
+            <input type="text" class="answer" data-correct="46">
+        </div>
+        <div class="question">
+            <label>3. ¿Cuánto es 78 + 22?</label>
+            <input type="text" class="answer" data-correct="100">
+        </div>
+        <div class="question">
+            <label>4. ¿Cuánto es 56 + 44?</label>
+            <input type="text" class="answer" data-correct="100">
+        </div>
+    </div>
+
+    <div class="section" id="resta">
+        <h2>Resta</h2>
+        <div class="question">
+            <label>1. ¿Cuánto es 90 - 30?</label>
+            <input type="text" class="answer" data-correct="60">
+        </div>
+        <div class="question">
+            <label>2. ¿Cuánto es 75 - 25?</label>
+            <input type="text" class="answer" data-correct="50">
+        </div>
+        <div class="question">
+            <label>3. ¿Cuánto es 50 - 15?</label>
+            <input type="text" class="answer" data-correct="35">
+        </div>
+        <div class="question">
+            <label>4. ¿Cuánto es 65 - 40?</label>
+            <input type="text" class="answer" data-correct="25">
+        </div>
+    </div>
+
+    <div class="section" id="multiplicacion">
+        <h2>Multiplicación</h2>
+        <div class="question">
+            <label>1. ¿Cuánto es 7 x 6?</label>
+            <input type="text" class="answer" data-correct="42">
+        </div>
+        <div class="question">
+            <label>2. ¿Cuánto es 8 x 9?</label>
+            <input type="text" class="answer" data-correct="72">
+        </div>
+        <div class="question">
+            <label>3. ¿Cuánto es 5 x 4?</label>
+            <input type="text" class="answer" data-correct="20">
+        </div>
+        <div class="question">
+            <label>4. ¿Cuánto es 9 x 3?</label>
+            <input type="text" class="answer" data-correct="27">
+        </div>
+    </div>
+
+    <div class="section" id="division">
+        <h2>División</h2>
+        <div class="question">
+            <label>1. ¿Cuánto es 56 ÷ 7?</label>
+            <input type="text" class="answer" data-correct="8">
+        </div>
+        <div class="question">
+            <label>2. ¿Cuánto es 72 ÷ 8?</label>
+            <input type="text" class="answer" data-correct="9">
+        </div>
+        <div class="question">
+            <label>3. ¿Cuánto es 45 ÷ 5?</label>
+            <input type="text" class="answer" data-correct="9">
+        </div>
+        <div class="question">
+            <label>4. ¿Cuánto es 36 ÷ 6?</label>
+            <input type="text" class="answer" data-correct="6">
+        </div>
+    </div>
+
+    <button class="submit-button" onclick="calcularPuntuacion()">Enviar Respuestas</button>
+    <div class="score" id="score"></div>
+</div>
+
+<script>
+    function calcularPuntuacion() {
+        let totalCorrectas = 0;
+        const respuestas = document.querySelectorAll('.answer');
+        
+        respuestas.forEach(respuesta => {
+            const valorUsuario = respuesta.value.trim();
+            const valorCorrecto = respuesta.getAttribute('data-correct');
+            
+            if (valorUsuario === valorCorrecto) {
+                totalCorrectas++;
+            }
+            // Deshabilitar el campo después de evaluar la respuesta
+            respuesta.disabled = true;
+        });
+        
+        const puntuacionTotal = respuestas.length;
+        const scoreDiv = document.getElementById('score');
+        scoreDiv.textContent = `Puntuación: ${totalCorrectas} de ${puntuacionTotal}`;
+        
+        // Deshabilitar el botón de enviar después de calcular la puntuación
+        document.querySelector('.submit-button').disabled = true;
+    }
+</script>
+
+</body>
+</html>
