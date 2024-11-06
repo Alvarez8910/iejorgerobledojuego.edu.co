@@ -42,12 +42,20 @@
             margin-bottom: 20px;
         }
 
+        .section h2 {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
         .question {
             margin: 10px 0;
         }
 
         .question label {
             font-size: 1rem;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .question input {
@@ -82,6 +90,17 @@
             color: #333;
         }
 
+        /* Estilos de resultado */
+        .correct {
+            color: green;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            color: red;
+            font-weight: bold;
+        }
+
         /* Media query para pantallas pequeñas */
         @media (max-width: 400px) {
             h1 {
@@ -102,15 +121,15 @@
 <body>
 
 <div class="container">
-    <li><a href="index.html">Volver al inicio</a></li>
     <h1>Preguntas de Matemáticas y Lógica</h1>
+    <li><a href="index.html">Volver al inicio</a></li>
     <div id="preguntas" class="section"></div>
     <button class="submit-button" onclick="calcularPuntuacion()">Enviar Respuestas</button>
     <div class="score" id="score"></div>
 </div>
 
 <script>
-    const preguntasLógicas = [
+    const preguntasLogicas = [
         { pregunta: "Si 5 gatos cazan 5 ratones en 5 minutos, ¿cuántos ratones caza 1 gato en 1 minuto?", respuesta: "1" },
         { pregunta: "Un tren eléctrico va de norte a sur. ¿Hacia dónde va el humo?", respuesta: "no hay" },
         { pregunta: "Si tienes una docena de huevos y se te rompe la mitad, ¿cuántos huevos quedan?", respuesta: "6" },
@@ -203,6 +222,9 @@
                 input.dataset.correct = preguntaObj.respuesta;
                 questionDiv.appendChild(label);
                 questionDiv.appendChild(input);
+                const resultado = document.createElement("span");
+                resultado.classList.add("resultado");
+                questionDiv.appendChild(resultado);
                 section.appendChild(questionDiv);
             });
 
@@ -217,9 +239,15 @@
         respuestas.forEach(respuesta => {
             const valorUsuario = respuesta.value.trim();
             const valorCorrecto = respuesta.dataset.correct;
+            const resultadoSpan = respuesta.nextElementSibling;
             
             if (valorUsuario === valorCorrecto) {
                 totalCorrectas++;
+                resultadoSpan.textContent = "Correcto";
+                resultadoSpan.classList.add("correct");
+            } else {
+                resultadoSpan.textContent = `Incorrecto `;
+                resultadoSpan.classList.add("incorrect");
             }
             respuesta.disabled = true;
         });
