@@ -7,8 +7,8 @@ body {
     margin: 0;
     background: linear-gradient(135deg, #e1f5fe, #e8eaf6);
     font-family: Arial, sans-serif;
-    overflow: hidden;
     color: #333;
+    overflow-x: hidden;
 }
 
 /* Contenedor Central */
@@ -43,20 +43,12 @@ body {
     animation-delay: calc(var(--n) * 0.1s);
 }
 
-/* Animación de colores: verde, blanco, amarillo */
 @keyframes colorCycle {
-    0% { color: #32cd32; }  /* Verde */
-    33% { color: #044d2e; }    /* Blanco */
-    66% { color: #ffeb3b; } /* Amarillo */
-    100% { color: #32cd32; } /* Vuelve al verde */
+    0% { color: #32cd32; }
+    33% { color: #044d2e; }
+    66% { color: #ffeb3b; }
+    100% { color: #32cd32; }
 }
-
-/* Ajuste de retraso secuencial */
-.animated-title span:nth-child(1) { --n: 0; }
-.animated-title span:nth-child(2) { --n: 1; }
-.animated-title span:nth-child(3) { --n: 2; }
-/* Continúa el patrón para todas las letras */
-.animated-title span:nth-child(n) { --n: calc(n - 1); }
 
 /* Texto descriptivo */
 p {
@@ -69,6 +61,7 @@ p {
     display: flex;
     gap: 1rem;
     margin-top: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .button {
@@ -80,17 +73,10 @@ p {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.matematicas {
-    background-color: #4caf50;
-}
-
-.quimica {
-    background-color: #ff5722;
-}
-
-.fisica {
-    background-color: #2196f3;
-}
+.matematicas { background-color: #4caf50; }
+.quimica { background-color: #ff5722; }
+.fisica { background-color: #2196f3; }
+.matebasica { background-color: #ff9800; }
 
 .button:hover {
     transform: scale(1.1);
@@ -100,8 +86,8 @@ p {
 /* Átomos */
 .atom-container {
     position: absolute;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     animation: rotate 20s infinite linear;
 }
 
@@ -109,6 +95,7 @@ p {
 .atom2 { top: 30%; left: 70%; }
 .atom3 { top: 60%; left: 40%; }
 
+/* Núcleo y órbitas */
 .nucleus {
     position: absolute;
     top: 50%;
@@ -118,22 +105,21 @@ p {
     background-color: #ff5722;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.orbit {
+.orbit1, .orbit2 {
     position: absolute;
     top: 50%;
     left: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    animation: orbit 6s linear infinite;
 }
 
-.orbit1 { width: 120px; height: 120px; }
-.orbit2 { width: 160px; height: 160px; }
+.orbit1 { width: 90px; height: 90px; }
+.orbit2 { width: 130px; height: 130px; }
 
+/* Electron */
 .electron {
     position: absolute;
     top: 0;
@@ -181,7 +167,6 @@ p {
     font-size: 2rem;
     color: rgba(0, 0, 0, 0.3);
     font-weight: bold;
-    animation: floatNumbers 5s infinite ease-in-out;
 }
 
 .number1 { top: 15%; left: 50%; }
@@ -195,13 +180,62 @@ p {
     100% { transform: translateY(0); }
 }
 
-@keyframes floatNumbers {
-    0% { transform: translateX(0); }
-    50% { transform: translateX(10px); }
-    100% { transform: translateX(0); }
-}
-
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+/* Media Queries para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .animated-title {
+        font-size: 1.8rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .atom-container {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nucleus {
+        width: 20px;
+        height: 20px;
+    }
+
+    .orbit1 { width: 60px; height: 60px; }
+    .orbit2 { width: 90px; height: 90px; }
+}
+
+/* Media Queries para pantallas medianas (tablets) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .container {
+        padding: 2rem;
+        width: 85%;
+    }
+
+    .animated-title {
+        font-size: 2.2rem;
+    }
+
+    .atom-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nucleus {
+        width: 25px;
+        height: 25px;
+    }
+
+    .orbit1 { width: 70px; height: 70px; }
+    .orbit2 { width: 100px; height: 100px; }
 }
