@@ -76,7 +76,7 @@ p {
 .matematicas { background-color: #4caf50; }
 .quimica { background-color: #ff5722; }
 .fisica { background-color: #2196f3; }
-.button.matebasica { background-color: #ff9800 !important; }
+.matebasica { background-color: #ff9800; }
 
 .button:hover {
     transform: scale(1.1);
@@ -238,4 +238,35 @@ p {
 
     .orbit1 { width: 70px; height: 70px; }
     .orbit2 { width: 100px; height: 100px; }
+}
+/* Botones */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.button {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+/* Colores de los botones */
+.matematicas { background-color: #4caf50; } /* Verde */
+.quimica { background-color: #ff5722; } /* Naranja */
+.fisica { background-color: #2196f3; } /* Azul */
+.matebasica { background-color: #ff9800; } /* Amarillo */
+.ingles { background-color: #9c27b0; } /* Morado */
+
+/* Efecto al pasar el cursor por encima */
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff; /* Cambia el fondo a blanco */
+    color: #333; /* Cambia el color del texto a gris oscuro */
 }
