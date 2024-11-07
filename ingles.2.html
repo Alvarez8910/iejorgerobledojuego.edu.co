@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Aprende Verbos Irregulares en Inglés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            text-align: center;
+            background-color: #ffcc66;
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .verbs-list {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .verb-card {
+            background-color: #e6f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .verb-card:hover {
+            transform: scale(1.05);
+        }
+
+        .quiz {
+            background-color: #e6f3ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .option:hover {
+            background-color: #f0f0f0;
+            transform: translateX(10px);
+        }
+
+        .correct {
+            background-color: #90EE90;
+        }
+
+        .incorrect {
+            background-color: #FFB6C1;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Aprende Verbos Irregulares en Inglés</h1>
+        <p>Memoriza los verbos irregulares más comunes y su traducción</p>
+        <li><a href="ingles.html">Volver</a></li>
+    </div>
+
+    <div class="content">
+        <a href="https://www.uv.mx/pozarica/caa-conta/files/2016/02/REGULAR-AND-IRREGULAR-VERBS.pdf" download="Archivo.pdf">Descargar Archivo PDF de verbos</a>
+        <h2>Lista de Verbos Irregulares</h2>
+        <div class="verbs-list">
+            <div class="verb-card"><strong>Be</strong> - was/were - been<br><em>Ser/Estar</em></div>
+            <div class="verb-card"><strong>Become</strong> - became - become<br><em>Convertirse</em></div>
+            <div class="verb-card"><strong>Begin</strong> - began - begun<br><em>Empezar</em></div>
+            <div class="verb-card"><strong>Bite</strong> - bit - bitten<br><em>Morder</em></div>
+            <div class="verb-card"><strong>Blow</strong> - blew - blown<br><em>Soplar</em></div>
+            <div class="verb-card"><strong>Break</strong> - broke - broken<br><em>Romper</em></div>
+            <div class="verb-card"><strong>Bring</strong> - brought - brought<br><em>Traer</em></div>
+            <div class="verb-card"><strong>Build</strong> - built - built<br><em>Construir</em></div>
+            <div class="verb-card"><strong>Buy</strong> - bought - bought<br><em>Comprar</em></div>
+            <div class="verb-card"><strong>Catch</strong> - caught - caught<br><em>Atrapar</em></div>
+            <div class="verb-card"><strong>Choose</strong> - chose - chosen<br><em>Elegir</em></div>
+            <div class="verb-card"><strong>Come</strong> - came - come<br><em>Venir</em></div>
+            <div class="verb-card"><strong>Do</strong> - did - done<br><em>Hacer</em></div>
+            <div class="verb-card"><strong>Drink</strong> - drank - drunk<br><em>Beber</em></div>
+            <div class="verb-card"><strong>Drive</strong> - drove - driven<br><em>Manejar</em></div>
+            <div class="verb-card"><strong>Eat</strong> - ate - eaten<br><em>Comer</em></div>
+            <div class="verb-card"><strong>Fall</strong> - fell - fallen<br><em>Caer</em></div>
+            <div class="verb-card"><strong>Feel</strong> - felt - felt<br><em>Sentir</em></div>
+            <div class="verb-card"><strong>Find</strong> - found - found<br><em>Encontrar</em></div>
+            <div class="verb-card"><strong>Fly</strong> - flew - flown<br><em>Volar</em></div>
+            <div class="verb-card"><strong>Forget</strong> - forgot - forgotten<br><em>Olvidar</em></div>
+            <div class="verb-card"><strong>Get</strong> - got - gotten<br><em>Obtener</em></div>
+            <div class="verb-card"><strong>Give</strong> - gave - given<br><em>Dar</em></div>
+            <div class="verb-card"><strong>Go</strong> - went - gone<br><em>Ir</em></div>
+            <div class="verb-card"><strong>Have</strong> - had - had<br><em>Tener</em></div>
+            <div class="verb-card"><strong>Hear</strong> - heard - heard<br><em>Escuchar</em></div>
+            <div class="verb-card"><strong>Know</strong> - knew - known<br><em>Saber/Conocer</em></div>
+            <div class="verb-card"><strong>Leave</strong> - left - left<br><em>Dejar/Salir</em></div>
+            <div class="verb-card"><strong>Lose</strong> - lost - lost<br><em>Perder</em></div>
+            <div class="verb-card"><strong>Make</strong> - made - made<br><em>Hacer/Fabricar</em></div>
+            <div class="verb-card"><strong>Meet</strong> - met - met<br><em>Encontrar/Conocer</em></div>
+            <div class="verb-card"><strong>Pay</strong> - paid - paid<br><em>Pagar</em></div>
+            <div class="verb-card"><strong>Put</strong> - put - put<br><em>Poner</em></div>
+            <div class="verb-card"><strong>Read</strong> - read - read<br><em>Leer</em></div>
+            <div class="verb-card"><strong>Run</strong> - ran - run<br><em>Correr</em></div>
+            <div class="verb-card"><strong>Say</strong> - said - said<br><em>Decir</em></div>
+            <div class="verb-card"><strong>See</strong> - saw - seen<br><em>Ver</em></div>
+            <div class="verb-card"><strong>Sell</strong> - sold - sold<br><em>Vender</em></div>
+            <div class="verb-card"><strong>Send</strong> - sent - sent<br><em>Enviar</em></div>
+            <div class="verb-card"><strong>Sing</strong> - sang - sung<br><em>Cantar</em></div>
+            <div class="verb-card"><strong>Sit</strong> - sat - sat<br><em>Sentarse</em></div>
+            <div class="verb-card"><strong>Speak</strong> - spoke - spoken<br><em>Hablar</em></div>
+            <div class="verb-card"><strong>Spend</strong> - spent - spent<br><em>Gastar</em></div>
+            <div class="verb-card"><strong>Stand</strong> - stood - stood<br><em>Estar de pie</em></div>
+            <div class="verb-card"><strong>Take</strong> - took - taken<br><em>Tomar/Llevar</em></div>
+            <div class="verb-card"><strong>Teach</strong> - taught - taught<br><em>Enseñar</em></div>
+            <div class="verb-card"><strong>Think</strong> - thought - thought<br><em>Pensar</em></div>
+            <div class="verb-card"><strong>Throw</strong> - threw - thrown<br><em>Lanzar</em></div>
+            <div class="verb-card"><strong>Understand</strong> - understood - understood<br><em>Entender</em></div>
+            <div class="verb-card"><strong>Wake</strong> - woke - woken<br><em>Despertar</em></div>
+            <div class="verb-card"><strong>Wear</strong> - wore - worn<br><em>Usar/Llevar puesto</em></div>
+            <div class="verb-card"><strong>Win</strong> - won - won<br><em>Ganar</em></div>
+            <div class="verb-card"><strong>Write</strong> - wrote - written<br><em>Escribir</em></div>
+        </div>
+    </div>
+
+    <div class="quiz">
+        <h2>Práctica de Verbos Irregulares</h2>
+        <div class="question">
+            <p>¿Cuál es el pasado de "Go"?</p>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'A')">A) Went</div>
+                <div class="option" onclick="checkAnswer(this, 'B')">B) Goed</div>
+                <div class="option" onclick="checkAnswer(this, 'C')">C) Gone</div>
+            </div>
+        </div>
+        <div class="question">
+            <p>¿Cuál es el pasado participio de "Eat"?</p>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'C')">A) Ate</div>
+                <div class="option" onclick="checkAnswer(this, 'B')">B) Eat</div>
+                <div class="option" onclick="checkAnswer(this, 'C')">C) Eaten</div>
+            </div>
+        </div>
+        <div class="question">
+            <p>¿Cuál es el pasado de "See"?</p>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'A')">A) Saw</div>
+                <div class="option" onclick="checkAnswer(this, 'B')">B) Seen</div>
+                <div class="option" onclick="checkAnswer(this, 'C')">C) See</div>
+            </div>
+        </div>
+        <div class="question">
+            <p>¿Cuál es el pasado participio de "Write"?</p>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'C')">A) Wrote</div>
+                <div class="option" onclick="checkAnswer(this, 'B')">B) Writes</div>
+                <div class="option" onclick="checkAnswer(this, 'C')">C) Written</div>
+            </div>
+        </div>
+        <div class="question">
+            <p>¿Cuál es el pasado de "Have"?</p>
+            <div class="options">
+                <div class="option" onclick="checkAnswer(this, 'A')">A) Had</div>
+                <div class="option" onclick="checkAnswer(this, 'B')">B) Has</div>
+                <div class="option" onclick="checkAnswer(this, 'C')">C) Have</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(option, correctLetter) {
+            const options = option.parentElement.children;
+            const selectedLetter = option.innerText.trim().charAt(0);
+
+            for (let opt of options) {
+                opt.classList.remove('correct', 'incorrect');
+            }
+
+            if (selectedLetter === correctLetter) {
+                option.classList.add('correct');
+            } else {
+                option.classList.add('incorrect');
+            }
+        }
+    </script>
+</body>
+</html>
