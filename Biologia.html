@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biología para Todos</title>
+    <style>
+        
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #4CAF50; color: white; padding: 10px 0; text-align: center; }
+        nav { background-color: #333; color: white; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 5px; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; font-size: 1.5em; }
+        .question-section { margin-top: 20px; }
+        .question { font-size: 1.2em; margin-bottom: 10px; }
+        .option { margin: 5px 0; padding: 10px; border: 1px solid #ddd; cursor: pointer; }
+        .correct { background-color: #d4edda; }
+        .incorrect { background-color: #f8d7da; }
+        .explanation { background: #e0f7fa; padding: 15px; border-radius: 5px; }
+        footer { text-align: center; padding: 10px; background-color: #4CAF50; color: white; margin-top: 20px; }
+        
+        /* Estilo para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+                margin: 10px;
+                max-width: 100%;
+            }
+            .section h2 {
+                font-size: 1.2em;
+            }
+            .question {
+                font-size: 1em;
+            }
+            .option {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+            footer p {
+                font-size: 0.9em;
+            }
+            nav {
+                font-size: 1em;
+                padding: 8px;
+            }
+            nav a {
+                margin: 0 5px;
+            }
+        }
+
+        /* Estilo para pantallas muy pequeñas (como teléfonos en modo vertical) */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+            nav a {
+                font-size: 0.9em;
+                margin: 0 3px;
+            }
+            .question-section {
+                margin-top: 15px;
+            }
+            .option {
+                padding: 8px;
+                font-size: 0.9em;
+            }
+            footer p {
+                font-size: 0.8em;
+            }
+        }
+    
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background-color: #4CAF50; color: white; padding: 10px 0; text-align: center; }
+        nav { background-color: #333; color: white; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 10px; text-decoration: none; }
+        .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 5px; }
+        .section { margin: 20px 0; }
+        .section h2 { color: #333; }
+        .question-section { margin-top: 20px; }
+        .question { font-size: 1.2em; margin-bottom: 10px; }
+        .option { margin: 5px 0; padding: 10px; border: 1px solid #ddd; cursor: pointer; }
+        .correct { background-color: #d4edda; }
+        .incorrect { background-color: #f8d7da; }
+        .explanation { background: #e0f7fa; padding: 15px; border-radius: 5px; }
+        footer { text-align: center; padding: 10px; background-color: #4CAF50; color: white; margin-top: 20px; }
+        @media (max-width: 768px) { .container { padding: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Biología para Todos</h1>
+    <p>Aprende sobre biología y pon a prueba tus conocimientos.</p>
+</header>
+
+<nav>
+    <a href="biologiaexpli.html">Volver</a>
+    <a href="#celulas">Células</a>
+    <a href="#genetica">Genética</a>
+    <a href="#ecosistemas">Ecosistemas</a>
+    <a href="#circulatorio">Sistema Circulatorio</a>
+    <a href="#digestivo">Digestión</a>
+    <a href="#evolucion">Evolución</a>
+    <a href="#ecologia">Ecología</a>
+</nav>
+
+<!-- Tema: Células -->
+<div class="container" id="celulas">
+    <div class="section">
+        <h2>Células y sus funciones</h2>
+        <div class="explanation">
+            <p>La célula es la unidad básica de la vida. Todas las funciones esenciales para la vida se llevan a cabo a nivel celular, incluyendo el metabolismo, el crecimiento y la reproducción. Existen dos tipos principales de células: procariotas y eucariotas.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Preguntas sobre Células</h2>
+        <div class="question-section">
+            <div class="question">¿Cuál es la unidad básica de la vida?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. La célula</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. El tejido</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. El órgano</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Cuál de las siguientes estructuras es única en las células vegetales?</div>
+            <div class="option" onclick="checkAnswer(this, false)">A. Núcleo</div>
+            <div class="option" onclick="checkAnswer(this, true)">B. Cloroplasto</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Mitocondria</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué función tiene la mitocondria en la célula?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Producir energía en forma de ATP</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Sintetizar proteínas</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Almacenar material genético</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué tipo de célula tiene una membrana nuclear definida?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Célula eucariota</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Célula procariota</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Célula de virus</div>
+        </div>
+    </div>
+</div>
+
+<!-- Tema: Genética -->
+<div class="container" id="genetica">
+    <div class="section">
+        <h2>Genética y Herencia</h2>
+        <div class="explanation">
+            <p>La genética estudia cómo se transmiten los caracteres de una generación a otra. Los genes son segmentos de ADN que contienen la información para determinar los rasgos físicos y de comportamiento de los seres vivos.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Preguntas sobre Genética</h2>
+        <div class="question-section">
+            <div class="question">¿Qué es un gen?</div>
+            <div class="option" onclick="checkAnswer(this, false)">A. Una proteína que transporta oxígeno</div>
+            <div class="option" onclick="checkAnswer(this, true)">B. Un segmento de ADN que contiene información genética</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Un tipo de célula especializada en el sistema inmunológico</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Quién es conocido como el padre de la genética?</div>
+            <div class="option" onclick="checkAnswer(this, false)">A. Charles Darwin</div>
+            <div class="option" onclick="checkAnswer(this, true)">B. Gregor Mendel</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Isaac Newton</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué es la herencia genética?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. El proceso por el cual se transmiten los caracteres de los padres a los hijos</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. El estudio de las células sexuales</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. La variabilidad de los organismos dentro de una especie</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué es un alelo recesivo?</div>
+            <div class="option" onclick="checkAnswer(this, false)">A. Un alelo que siempre se expresa en el fenotipo</div>
+            <div class="option" onclick="checkAnswer(this, true)">B. Un alelo que solo se expresa en ausencia de un alelo dominante</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Un alelo que no afecta al genotipo</div>
+        </div>
+    </div>
+</div>
+
+<!-- Tema: Ecosistemas -->
+<div class="container" id="ecosistemas">
+    <div class="section">
+        <h2>Ecosistemas y Biodiversidad</h2>
+        <div class="explanation">
+            <p>Un ecosistema es una comunidad de seres vivos y su entorno. La biodiversidad es la variedad de especies en un ecosistema, que permite que haya equilibrio y resiliencia frente a cambios ambientales.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Preguntas sobre Ecosistemas</h2>
+        <div class="question-section">
+            <div class="question">¿Qué es un ecosistema?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Un sistema de seres vivos y su entorno</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Un grupo de animales en una región</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Solo el clima de una región</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué significa biodiversidad?</div>
+            <div class="option" onclick="checkAnswer(this, false)">A. Variedad de climas en un ecosistema</div>
+            <div class="option" onclick="checkAnswer(this, true)">B. Variedad de especies en un ecosistema</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. La cantidad de plantas en un bosque</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué es un organismo autótrofo?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Un organismo que produce su propio alimento</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Un organismo que se alimenta de otros organismos</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Un organismo que se encuentra en la parte superior de la cadena alimentaria</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué es una cadena trófica?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. La secuencia de organismos a través de la cual fluye la energía en un ecosistema</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. El intercambio de gases entre los organismos</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. El proceso de descomposición de materia orgánica</div>
+        </div>
+    </div>
+</div>
+
+<!-- Tema: Sistema Circulatorio -->
+<div class="container" id="circulatorio">
+    <div class="section">
+        <h2>Sistema Circulatorio</h2>
+        <div class="explanation">
+            <p>El sistema circulatorio transporta sangre, nutrientes, gases y desechos a través del cuerpo. Está compuesto por el corazón, los vasos sanguíneos y la sangre.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Preguntas sobre Sistema Circulatorio</h2>
+        <div class="question-section">
+            <div class="question">¿Qué órgano es el principal del sistema circulatorio?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. El corazón</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Los pulmones</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Los riñones</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué tipo de sangre circula a través de las arterias?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Sangre oxigenada</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Sangre desoxigenada</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Sangre con nutrientes</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Cuál es la función principal de los glóbulos rojos?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Transportar oxígeno</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Luchar contra infecciones</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Coagular la sangre</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué tipo de vaso sanguíneo transporta sangre de vuelta al corazón?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Las venas</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Las arterias</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Los capilares</div>
+        </div>
+    </div>
+</div>
+
+<!-- Tema: Digestión -->
+<div class="container" id="digestivo">
+    <div class="section">
+        <h2>Sistema Digestivo</h2>
+        <div class="explanation">
+            <p>El sistema digestivo es responsable de descomponer los alimentos y absorber los nutrientes necesarios para el funcionamiento del cuerpo. Incluye órganos como el estómago, los intestinos y el hígado.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Preguntas sobre Digestión</h2>
+        <div class="question-section">
+            <div class="question">¿Cuál es la función principal del estómago?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Descomponer los alimentos con ácidos y enzimas</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Absorber nutrientes</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Filtrar la sangre</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Dónde se lleva a cabo la mayor parte de la absorción de nutrientes?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. En el intestino delgado</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. En el estómago</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. En el colon</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué enzima se encuentra en la saliva y comienza la digestión de los carbohidratos?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Amilasa</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Pepsina</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Lipasa</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué función tiene el hígado en el proceso digestivo?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Producir bilis para descomponer grasas</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Absorber agua y nutrientes</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Almacenar alimentos</div>
+        </div>
+    </div>
+</div>
+
+<!-- Tema: Evolución -->
+<div class="container" id="evolucion">
+    <div class="section">
+        <h2>Evolución</h2>
+        <div class="explanation">
+            <p>La evolución es el proceso mediante el cual las especies cambian a lo largo del tiempo, adaptándose a su entorno a través de la selección natural.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Preguntas sobre Evolución</h2>
+        <div class="question-section">
+            <div class="question">¿Quién formuló la teoría de la evolución por selección natural?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Charles Darwin</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. Gregor Mendel</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Alfred Russel Wallace</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué es la selección natural?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. El proceso por el cual los individuos mejor adaptados sobreviven y se reproducen</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. La creación de nuevas especies por intervención divina</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. La eliminación de todos los organismos débiles</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué significa "adaptación" en el contexto de la evolución?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Un cambio en una especie que mejora su capacidad para sobrevivir y reproducirse</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. La mutación aleatoria de los genes</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. La variación de una especie sin cambios en su genética</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué evidencia apoya la teoría de la evolución?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Los fósiles, la biología molecular y la anatomía comparada</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. La creación de especies en laboratorios</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. La diversidad de especies en un solo ecosistema</div>
+        </div>
+    </div>
+</div>
+
+<!-- Tema: Ecología -->
+<div class="container" id="ecologia">
+    <div class="section">
+        <h2>Ecología</h2>
+        <div class="explanation">
+            <p>La ecología estudia las interacciones entre los organismos y su entorno, incluyendo la distribución de las especies y los factores ambientales que influyen en ellas.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Preguntas sobre Ecología</h2>
+        <div class="question-section">
+            <div class="question">¿Qué estudia la ecología?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Las interacciones entre los organismos y su entorno</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. La clasificación de las especies</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. La genética de los seres vivos</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué es un bioma?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. Una gran comunidad ecológica que ocupa una zona geográfica extensa</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. El proceso de intercambio de gases en la atmósfera</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. Un ecosistema acuático de agua dulce</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué es la capacidad de carga de un ecosistema?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. El número máximo de individuos que un ecosistema puede soportar sin deteriorarse</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. La cantidad de especies que pueden vivir en un ecosistema</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. La cantidad de recursos naturales disponibles</div>
+        </div>
+        <div class="question-section">
+            <div class="question">¿Qué es el ciclo del nitrógeno?</div>
+            <div class="option" onclick="checkAnswer(this, true)">A. El proceso biogeoquímico mediante el cual el nitrógeno se convierte en formas utilizables para las plantas</div>
+            <div class="option" onclick="checkAnswer(this, false)">B. El proceso de descomposición de los residuos animales</div>
+            <div class="option" onclick="checkAnswer(this, false)">C. El ciclo del agua en el medio ambiente</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Biología para Todos</p>
+</footer>
+
+<script>
+    function checkAnswer(option, isCorrect) {
+        if (isCorrect) {
+            option.classList.add("correct");
+            alert("¡Correcto!");
+        } else {
+            option.classList.add("incorrect");
+            alert("Respuesta incorrecta. Intenta de nuevo.");
+        }
+    }
+</script>
+
+</body>
+</html>

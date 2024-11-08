@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Biología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #4CAF50;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+        .interactive {
+            background-color: #eaf7e3;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        /* Media Queries para móvil */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            header h1 {
+                font-size: 2em;
+            }
+            nav a {
+                font-size: 1em;
+                margin: 0 8px;
+            }
+            .section h2 {
+                font-size: 1.5em;
+            }
+            .section p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Aprende Biología</h1>
+    <p>Explora el fascinante mundo de la biología y aprende de manera interactiva</p>
+</header>
+
+<nav>
+    <a href="index.html">Volver</a>
+    <a href="#celulas">Células</a>
+    <a href="#genetica">Genética</a>
+    <a href="#ecosistemas">Ecosistemas</a>
+    <a href="#digestivo">Sistema Digestivo</a>
+    <a href="#circulatorio">Sistema Circulatorio</a>
+    <a href="Biologia.html">Pon a prueba tus conocimientos.</a>
+</nav>
+
+<div class="container">
+
+    <!-- Tema Células -->
+    <div class="section" id="celulas">
+        <h2>Células: La Unidad Básica de la Vida</h2>
+        <div class="image-container">
+          
+        </div>
+        <p>Las células son la unidad básica de la vida y forman todos los organismos vivos. Cada célula tiene una estructura compleja que le permite realizar diversas funciones necesarias para la vida. Existen dos tipos principales de células: procariotas y eucariotas. Las células procariotas, que se encuentran en organismos como bacterias y arqueas, no tienen núcleo definido, mientras que las células eucariotas, presentes en animales, plantas, hongos y protistas, tienen un núcleo donde se encuentra el material genético.</p>
+
+        <p>Las células eucariotas son más grandes y complejas, con estructuras especializadas llamadas orgánulos, como el núcleo, las mitocondrias, el aparato de Golgi y el retículo endoplásmico, que trabajan juntas para mantener el funcionamiento celular. El núcleo contiene el ADN, la información genética que dirige las actividades celulares y la reproducción. Las mitocondrias, por otro lado, son conocidas como "las centrales eléctricas" de la célula, ya que generan la energía necesaria para las funciones celulares a través de la respiración celular.</p>
+
+        <p>En las células vegetales, se encuentran estructuras únicas como los cloroplastos, que son responsables de la fotosíntesis, el proceso mediante el cual las plantas convierten la luz solar en energía. Además, las células vegetales tienen una pared celular rígida que les da forma y soporte, lo cual no ocurre en las células animales. La membrana celular, que rodea tanto a las células animales como a las vegetales, regula el paso de sustancias hacia y desde el interior de la célula.</p>
+
+        <div class="interactive">
+            <h3>Prueba tus conocimientos sobre las células:</h3>
+            <button onclick="alert('¡Correcto!')">¿La célula es la unidad básica de la vida?</button>
+            <button onclick="alert('Incorrecto, vuelve a intentarlo.')">¿Las células están hechas solo de agua?</button>
+        </div>
+    </div>
+
+    <!-- Tema Genética -->
+    <div class="section" id="genetica">
+        <h2>Genética: El Estudio de la Herencia</h2>
+        <div class="image-container">
+           
+        </div>
+        <p>La genética es el campo de la biología que estudia cómo se heredan las características físicas y biológicas de los organismos de una generación a otra. La base de la genética está en el ADN (ácido desoxirribonucleico), una molécula compleja que contiene la información genética que determina las características de un organismo. El ADN se organiza en unidades llamadas genes, que son segmentos de la cadena de ADN que codifican proteínas que desempeñan funciones específicas dentro del cuerpo.</p>
+
+        <p>La transmisión de los genes de los padres a sus hijos ocurre a través de la reproducción. En los organismos sexuados, como los humanos, la herencia sigue patrones específicos que fueron estudiados por Gregor Mendel a través de sus experimentos con plantas de guisante. Mendel descubrió que los caracteres hereditarios siguen leyes de segregación y combinación que explican cómo se heredan los rasgos. Por ejemplo, el color de los ojos, la altura y otras características físicas son el resultado de la combinación de genes de ambos padres.</p>
+
+        <p>En la actualidad, la genética no solo explica las características físicas de los organismos, sino también aspectos de la salud y las enfermedades. La genética molecular ha permitido descubrir cómo los cambios en los genes pueden causar enfermedades genéticas, como la fibrosis quística o la anemia falciforme. Además, la ingeniería genética ha abierto nuevas posibilidades en medicina y biotecnología, permitiendo la creación de cultivos genéticamente modificados y terapias génicas.</p>
+
+        <div class="interactive">
+            <h3>¿Qué opinas de los genes?</h3>
+            <button onclick="alert('¡Exacto! Los genes son la base de la herencia.')">¿Los genes determinan nuestras características?</button>
+            <button onclick="alert('Intenta de nuevo.')">¿El color de los ojos es aleatorio?</button>
+        </div>
+    </div>
+
+    <!-- Tema Ecosistemas -->
+    <div class="section" id="ecosistemas">
+        <h2>Ecosistemas: Comunidades de Vida</h2>
+        <div class="image-container">
+          
+        </div>
+        <p>Un ecosistema es una comunidad de organismos vivos que interactúan entre sí y con su entorno físico. Los ecosistemas son esenciales para el equilibrio del planeta, ya que cada organismo juega un papel específico, desde los productores (como las plantas) hasta los consumidores (animales) y los descomponedores (como los hongos y bacterias). Los ecosistemas pueden ser terrestres, como bosques, desiertos o praderas, o acuáticos, como océanos, ríos y lagos.</p>
+
+        <p>La biodiversidad dentro de un ecosistema es crucial para su estabilidad y resistencia frente a cambios ambientales. Cuanto mayor es la diversidad de especies, mayor es la capacidad del ecosistema para adaptarse a alteraciones, como cambios en el clima o la introducción de nuevas especies. Por ejemplo, en un bosque tropical, los árboles, las plantas, los insectos, los animales y los microorganismos trabajan juntos para mantener el equilibrio, realizando procesos como la fotosíntesis, la polinización y la descomposición.</p>
+
+        <p>Sin embargo, los ecosistemas están siendo amenazados por actividades humanas como la deforestación, la contaminación y el cambio climático. La pérdida de biodiversidad puede debilitar la función de un ecosistema, lo que afecta la disponibilidad de recursos vitales como el agua limpia, la comida y el oxígeno. Por ello, la conservación de los ecosistemas y la biodiversidad es esencial para la supervivencia de la vida en la Tierra.</p>
+
+        <div class="interactive">
+            <h3>Interacción en Ecosistemas</h3>
+            <button onclick="alert('¡Bien hecho! La biodiversidad es crucial para la estabilidad.')">¿La biodiversidad ayuda al equilibrio del ecosistema?</button>
+            <button onclick="alert('¡Intenta de nuevo! Piensa en cómo interactúan las especies.')">¿Los ecosistemas no necesitan biodiversidad?</button>
+        </div>
+    </div>
+
+    <!-- Tema Sistema Digestivo -->
+    <div class="section" id="digestivo">
+        <h2>Sistema Digestivo: De la Alimentación a la Energía</h2>
+        <div class="image-container">
+           
+        </div>
+        <p>El sistema digestivo es un conjunto de órganos cuya función principal es descomponer los alimentos para que el cuerpo pueda absorber los nutrientes esenciales para su funcionamiento. Comienza en la boca, donde los dientes y la saliva inician la descomposición de los alimentos, y continúa a lo largo del tracto digestivo hasta el ano.</p>
+
+        <p>En el estómago, los alimentos son mezclados con ácidos y enzimas que descomponen las proteínas. Luego, los nutrientes se absorben en el intestino delgado, mientras que el intestino grueso se encarga de absorber agua y eliminar los desechos no digeribles. El hígado y el páncreas también desempeñan roles importantes al producir enzimas y líquidos que ayudan en la digestión.</p>
+
+        <p>El sistema digestivo no solo es esencial para la absorción de nutrientes, sino también para mantener el equilibrio del cuerpo. Los nutrientes proporcionan energía, regulan el metabolismo y ayudan en la reparación y el crecimiento celular. Una buena salud digestiva es clave para una vida saludable, ya que un mal funcionamiento del sistema digestivo puede llevar a problemas como la desnutrición o enfermedades como la enfermedad celíaca.</p>
+    </div>
+
+    <!-- Tema Sistema Circulatorio -->
+    <div class="section" id="circulatorio">
+        <h2>Sistema Circulatorio: El Transporte de Nutrientes</h2>
+        <div class="image-container">
+           
+        </div>
+        <p>El sistema circulatorio es responsable de transportar la sangre, los nutrientes, el oxígeno y otros compuestos esenciales a todas las células del cuerpo. Este sistema está compuesto por el corazón, los vasos sanguíneos (arterias, venas y capilares) y la sangre. El corazón actúa como una bomba que impulsa la sangre a través del cuerpo.</p>
+
+        <p>El sistema circulatorio tiene dos circuitos principales: el circuito pulmonar, que transporta la sangre desde el corazón a los pulmones para que se oxigene, y el circuito sistémico, que lleva la sangre oxigenada a todo el cuerpo. La sangre también transporta desechos, como el dióxido de carbono, para ser eliminados por los pulmones o los riñones.</p>
+
+        <p>El buen funcionamiento del sistema circulatorio es crucial para la salud, ya que garantiza que todos los órganos y tejidos reciban suficiente oxígeno y nutrientes. Problemas en el sistema circulatorio, como la hipertensión, el colesterol alto o la aterosclerosis, pueden llevar a enfermedades graves como los ataques cardíacos o los accidentes cerebrovasculares.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Biología Interactiva. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    // Script básico de interacción
+    function alert(message) {
+        window.alert(message);
+    }
+</script>
+
+</body>
+</html>
