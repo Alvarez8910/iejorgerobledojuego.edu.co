@@ -262,6 +262,7 @@ p {
 .fisica { background-color: #2196f3; } /* Azul */
 .matebasica { background-color: #ff9800; } /* Amarillo */
 .ingles { background-color: #9c27b0; } /* Morado */
+.biologia { background-color: #b02727; } 
 
 /* Efecto al pasar el cursor por encima */
 .button:hover {
