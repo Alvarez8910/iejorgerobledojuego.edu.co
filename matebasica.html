@@ -101,6 +101,22 @@
             font-weight: bold;
         }
 
+        /* Estilo para los enlaces */
+        a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007acc;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 1rem;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #005f99;
+        }
+
         /* Media query para pantallas pequeñas */
         @media (max-width: 400px) {
             h1 {
@@ -122,8 +138,9 @@
 
 <div class="container">
     <h1>Preguntas de Matemáticas y Lógica</h1>
-    <li><a href="index.html">Volver al inicio</a></li>
-    <li><a href="guia.html">Ver guia</a></li>
+    <a href="index.html">Volver al inicio</a>
+    <a href="guia.html">Ver guía</a>
+    <a href="mateba.html">juego de Matemáticas</a>
     <div id="preguntas" class="section"></div>
     <button class="submit-button" onclick="calcularPuntuacion()">Enviar Respuestas</button>
     <div class="score" id="score"></div>
@@ -136,7 +153,9 @@
         { pregunta: "Si tienes una docena de huevos y se te rompe la mitad, ¿cuántos huevos quedan?", respuesta: "6" },
         { pregunta: "¿Cuántos meses tienen 28 días?", respuesta: "12" },
         { pregunta: "El padre de Ana tiene cinco hijas: Nana, Nene, Nini, Nono y... ¿cómo se llama la quinta hija?", respuesta: "Ana" },
-        { pregunta: "Un hombre y su hijo tienen un accidente de coche. El padre muere y el hijo es llevado al hospital. Al verlo, el doctor dice 'No puedo operarlo, es mi hijo'. ¿Quién es el doctor?", respuesta: "su madre" }
+        { pregunta: "Un hombre y su hijo tienen un accidente de coche. El padre muere y el hijo es llevado al hospital. Al verlo, el doctor dice 'No puedo operarlo, es mi hijo'. ¿Quién es el doctor?", respuesta: "su madre" },
+        { pregunta: "¿Qué animal no tiene cuerdas vocales?", respuesta: "jirafa" },
+        { pregunta: "¿Qué pesa más, un kilo de plomo o un kilo de plumas?", respuesta: "igual" }
     ];
 
     const preguntasMatematicas = {
@@ -144,25 +163,41 @@
             { pregunta: "¿Cuánto es 45 + 27?", respuesta: "72" },
             { pregunta: "¿Cuánto es 12 + 34?", respuesta: "46" },
             { pregunta: "¿Cuánto es 78 + 22?", respuesta: "100" },
-            { pregunta: "¿Cuánto es 56 + 44?", respuesta: "100" }
+            { pregunta: "¿Cuánto es 56 + 44?", respuesta: "100" },
+            { pregunta: "¿Cuánto es 34 + 56?", respuesta: "90" },
+            { pregunta: "¿Cuánto es 23 + 77?", respuesta: "100" },
+            { pregunta: "¿Cuánto es 65 + 35?", respuesta: "100" },
+            { pregunta: "¿Cuánto es 89 + 11?", respuesta: "100" }
         ],
         resta: [
             { pregunta: "¿Cuánto es 90 - 30?", respuesta: "60" },
             { pregunta: "¿Cuánto es 75 - 25?", respuesta: "50" },
             { pregunta: "¿Cuánto es 50 - 15?", respuesta: "35" },
-            { pregunta: "¿Cuánto es 65 - 40?", respuesta: "25" }
+            { pregunta: "¿Cuánto es 65 - 40?", respuesta: "25" },
+            { pregunta: "¿Cuánto es 100 - 45?", respuesta: "55" },
+            { pregunta: "¿Cuánto es 80 - 30?", respuesta: "50" },
+            { pregunta: "¿Cuánto es 120 - 45?", respuesta: "75" },
+            { pregunta: "¿Cuánto es 150 - 75?", respuesta: "75" }
         ],
         multiplicacion: [
             { pregunta: "¿Cuánto es 7 x 6?", respuesta: "42" },
             { pregunta: "¿Cuánto es 8 x 9?", respuesta: "72" },
             { pregunta: "¿Cuánto es 5 x 4?", respuesta: "20" },
-            { pregunta: "¿Cuánto es 9 x 3?", respuesta: "27" }
+            { pregunta: "¿Cuánto es 9 x 3?", respuesta: "27" },
+            { pregunta: "¿Cuánto es 6 x 8?", respuesta: "48" },
+            { pregunta: "¿Cuánto es 11 x 11?", respuesta: "121" },
+            { pregunta: "¿Cuánto es 4 x 9?", respuesta: "36" },
+            { pregunta: "¿Cuánto es 3 x 15?", respuesta: "45" }
         ],
         division: [
             { pregunta: "¿Cuánto es 10 ÷ 2?", respuesta: "5" },
             { pregunta: "¿Cuánto es 12 ÷ 3?", respuesta: "4" },
             { pregunta: "¿Cuánto es 15 ÷ 5?", respuesta: "3" },
-            { pregunta: "¿Cuánto es 20 ÷ 4?", respuesta: "5" }
+            { pregunta: "¿Cuánto es 20 ÷ 4?", respuesta: "5" },
+            { pregunta: "¿Cuánto es 24 ÷ 6?", respuesta: "4" },
+            { pregunta: "¿Cuánto es 36 ÷ 6?", respuesta: "6" },
+            { pregunta: "¿Cuánto es 40 ÷ 5?", respuesta: "8" },
+            { pregunta: "¿Cuánto es 100 ÷ 25?", respuesta: "4" }
         ]
     };
 
@@ -180,11 +215,11 @@
 
     function seleccionarPreguntas() {
         const preguntasSeleccionadas = {
-            logica: obtenerPreguntasAleatorias(preguntasLogicas, 2),
-            suma: obtenerPreguntasAleatorias(preguntasMatematicas.suma, 2),
-            resta: obtenerPreguntasAleatorias(preguntasMatematicas.resta, 2),
-            multiplicacion: obtenerPreguntasAleatorias(preguntasMatematicas.multiplicacion, 2),
-            division: obtenerPreguntasAleatorias(preguntasMatematicas.division, 2)
+            logica: obtenerPreguntasAleatorias(preguntasLogicas, 3),
+            suma: obtenerPreguntasAleatorias(preguntasMatematicas.suma, 3),
+            resta: obtenerPreguntasAleatorias(preguntasMatematicas.resta, 3),
+            multiplicacion: obtenerPreguntasAleatorias(preguntasMatematicas.multiplicacion, 3),
+            division: obtenerPreguntasAleatorias(preguntasMatematicas.division, 3)
         };
         return preguntasSeleccionadas;
     }
