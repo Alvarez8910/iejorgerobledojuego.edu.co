@@ -2,69 +2,80 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Aprende Inglés por Niveles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Inglés desde Cero</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f0f8ff;
         }
 
         .header {
             text-align: center;
-            background-color: #7db1e6;
+            background-color: #4CAF50;
             color: white;
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 30px;
         }
 
-        .level-selector {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .level-btn {
-            padding: 10px 20px;
-            border: none;
+        .header a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            color: #fff;
+            background-color: #333;
             border-radius: 5px;
-            cursor: pointer;
-            background-color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .header a:hover {
+            background-color: #575757;
+        }
+
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
             color: white;
-            transition: all 0.3s, box-shadow 0.3s;
+            background-color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 5px;
+            text-align: center;
+            flex: 1;
         }
 
-        .level-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        .nav a:hover {
+            background-color: #575757;
         }
 
-        .level-btn:active {
-            transform: scale(0.95);
-            background-color: #3e8e41;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .level-btn.active {
-            background-color: #45a049;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .lesson {
+        section {
             background-color: white;
             padding: 20px;
             border-radius: 10px;
-            margin-bottom: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-
-        .lesson.active {
-            display: block;
+            margin-bottom: 20px;
         }
 
         .quiz {
@@ -76,9 +87,6 @@
 
         .question {
             margin-bottom: 20px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 8px;
         }
 
         .options {
@@ -89,258 +97,162 @@
 
         .option {
             padding: 10px;
-            background-color: white;
+            background-color: #f0f0f0;
             border: 1px solid #ccc;
             border-radius: 5px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: background-color 0.3s;
         }
 
         .option:hover {
-            background-color: #f0f0f0;
-            transform: translateX(10px);
+            background-color: #e0e0e0;
         }
 
         .correct {
-            background-color: #90EE90;
+            background-color: #90EE90 !important;
         }
 
         .incorrect {
-            background-color: #FFB6C1;
+            background-color: #FFB6C1 !important;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .nav a {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Aprende Inglés por Niveles</h1>
-        <p>¡Aprende inglés de manera interactiva y progresiva!</p>
-        <li><a href="index.html">Volver al inicio</a></li>
-        <li><a href="ingles.2.html">Aprende Verbos Irregulares en Inglés</a></li>
-    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Aprende Inglés desde Cero</h1>
+            <p>¡Empieza tu aventura de aprendizaje de inglés hoy mismo!</p>
+            <a href="index.html">Volver al inicio</a>
+            <a href="ingles.2.html">Aprende Verbos Irregulares en Inglés</a>
+        </div>
 
-    <div class="level-selector">
-        <button class="level-btn active" onclick="changeLevel(1)">Nivel 1</button>
-        <button class="level-btn" onclick="changeLevel(2)">Nivel 2</button>
-        <button class="level-btn" onclick="changeLevel(3)">Nivel 3</button>
-        <button class="level-btn" onclick="changeLevel(4)">Nivel 4</button>
-        <button class="level-btn" onclick="changeLevel(5)">Nivel 5</button>
-    </div>
+        <nav class="nav">
+            <a href="#alfabeto">El Alfabeto</a>
+            <a href="#saludos">Saludos y Frases</a>
+            <a href="#vocabulario">Vocabulario Básico</a>
+            <a href="#textos">Textos Fáciles</a>
+            <a href="#verbos">Verbos Comunes</a>
+            <a href="#consejos">Consejos para Aprender</a>
+        </nav>
 
-    <!-- Nivel 1: Conceptos Básicos -->
-    <div class="lesson active" id="level1">
-        <h2>Nivel 1: Conceptos Básicos</h2>
-        <div class="content">
-            <h3>1.1 El Alfabeto en Inglés</h3>
-            <p>Aprende el alfabeto y su pronunciación:</p>
-            <div class="example">
-                A (ei), B (bi), C (si), D (di), E (i), F (ef), G (yi), H (eich), I (ai), J (yei)<br>
-                K (kei), L (el), M (em), N (en), O (ou), P (pi), Q (kiu), R (ar), S (es), T (ti)<br>
-                U (iu), V (vi), W (dobliu), X (eks), Y (uai), Z (zi/zed)
-            </div>
+        <section id="alfabeto">
+            <h2>El Alfabeto</h2>
+            <p>Aprende las letras del alfabeto y su pronunciación:</p>
+            <p>A (ei), B (bi), C (si), D (di), E (i), F (ef), G (yi), H (eich), I (ai), J (yei), K (kei), L (el), M (em), N (en), O (ou), P (pi), Q (kiu), R (ar), S (es), T (ti), U (iu), V (vi), W (dobliu), X (eks), Y (uai), Z (zi/zed)</p>
+        </section>
 
-            <h3>1.2 Saludos Básicos</h3>
-            <p>Frases comunes para saludar y despedirse:</p>
-            <div class="example">
-                Hello = Hola<br>
-                Good morning = Buenos días<br>
-                Good afternoon = Buenas tardes<br>
-                Good evening = Buenas noches<br>
-                Goodbye = Adiós<br>
-                See you later = Hasta luego
-            </div>
+        <section id="saludos">
+            <h2>Saludos y Frases Comunes</h2>
+            <p>Frases básicas para iniciar conversaciones en inglés:</p>
+            <ul>
+                <li>Hello = Hola</li>
+                <li>Good morning = Buenos días</li>
+                <li>Good afternoon = Buenas tardes</li>
+                <li>Good night = Buenas noches</li>
+                <li>How are you? = ¿Cómo estás?</li>
+                <li>I'm fine, thank you = Estoy bien, gracias</li>
+                <li>Goodbye = Adiós</li>
+            </ul>
+        </section>
 
-            <h3>1.3 Números del 1 al 20</h3>
-            <div class="example">
-                1 - One, 2 - Two, 3 - Three, 4 - Four, 5 - Five<br>
-                6 - Six, 7 - Seven, 8 - Eight, 9 - Nine, 10 - Ten<br>
-                11 - Eleven, 12 - Twelve, 13 - Thirteen, 14 - Fourteen, 15 - Fifteen<br>
-                16 - Sixteen, 17 - Seventeen, 18 - Eighteen, 19 - Nineteen, 20 - Twenty
-            </div>
-        </div>
-        <div class="quiz">
-            <h3>Práctica Nivel 1</h3>
-            <div class="question">
-                <p>¿Cómo se dice "Hola" en inglés?</p>
-                <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'A')">A) Hello</div>
-                    <div class="option" onclick="checkAnswer(this, 'B')">B) Goodbye</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) Good night</div>
-                </div>
-            </div>
-            <div class="question">
-                <p>¿Cuál es el número "Diecisiete" en inglés?</p>
-                <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'A')">A) Seventeen</div>
-                    <div class="option" onclick="checkAnswer(this, 'B')">B) Sixteen</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) Eighteen</div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <section id="vocabulario">
+            <h2>Vocabulario Básico</h2>
+            <p>Aprende algunas palabras comunes en inglés:</p>
+            <ul>
+                <li>Cat - Gato</li>
+                <li>Dog - Perro</li>
+                <li>House - Casa</li>
+                <li>Car - Coche</li>
+                <li>Sun - Sol</li>
+                <li>Book - Libro</li>
+                <li>Water - Agua</li>
+                <li>Food - Comida</li>
+                <li>Tree - Árbol</li>
+                <li>School - Escuela</li>
+            </ul>
+        </section>
 
-    <!-- Nivel 2: Frases Cotidianas -->
-    <div class="lesson" id="level2">
-        <h2>Nivel 2: Frases Cotidianas</h2>
-        <div class="content">
-            <h3>2.1 Presentaciones y Expresiones</h3>
-            <p>Frases básicas para presentarte:</p>
-            <div class="example">
-                My name is... = Mi nombre es...<br>
-                Nice to meet you = Encantado/a de conocerte<br>
-                How are you? = ¿Cómo estás?<br>
-                I'm fine, thank you = Estoy bien, gracias<br>
-                What's your name? = ¿Cuál es tu nombre?<br>
-                Please = Por favor, Thank you = Gracias
-            </div>
-        </div>
-        <div class="quiz">
-            <h3>Práctica Nivel 2</h3>
+        <section class="quiz">
+            <h3>Prueba tu Inglés</h3>
             <div class="question">
-                <p>¿Cómo se dice "¿Cómo estás?" en inglés?</p>
+                <p>¿Cómo se dice "Perro" en inglés?</p>
                 <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'A')">A) How are you?</div>
-                    <div class="option" onclick="checkAnswer(this, 'B')">B) What's your name?</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) Nice to meet you</div>
+                    <div class="option" data-correct="false">A) Cat</div>
+                    <div class="option" data-correct="true">B) Dog</div>
+                    <div class="option" data-correct="false">C) House</div>
                 </div>
             </div>
             <div class="question">
-                <p>¿Qué significa "Thank you" en español?</p>
+                <p>¿Cuál es el verbo "comer" en inglés?</p>
                 <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'B')">A) Por favor</div>
-                    <div class="option" onclick="checkAnswer(this, 'B')">B) Gracias</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) Hola</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Nivel 3: El Verbo "To Be" -->
-    <div class="lesson" id="level3">
-        <h2>Nivel 3: El Verbo "To Be"</h2>
-        <div class="content">
-            <h3>3.1 Usos del Verbo "To Be"</h3>
-            <p>El verbo "to be" se usa para describir estados o identidades:</p>
-            <div class="example">
-                I am = Yo soy/Yo estoy<br>
-                You are = Tú eres/Tú estás<br>
-                He/She/It is = Él/Ella/Esto es/está<br>
-                We are = Nosotros somos/estamos<br>
-                They are = Ellos son/están
-            </div>
-        </div>
-        <div class="quiz">
-            <h3>Práctica Nivel 3</h3>
-            <div class="question">
-                <p>Completa: "She ___ a doctor."</p>
-                <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'C')">A) are</div>
-                    <div class="option" onclick="checkAnswer(this, 'B')">B) am</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) is</div>
+                    <div class="option" data-correct="true">A) To eat</div>
+                    <div class="option" data-correct="false">B) To drink</div>
+                    <div class="option" data-correct="false">C) To see</div>
                 </div>
             </div>
             <div class="question">
-                <p>Completa: "We ___ friends."</p>
+                <p>¿Cómo se dice "Libro" en inglés?</p>
                 <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'A')">A) are</div>
-                    <div class="option" onclick="checkAnswer(this, 'B')">B) is</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) am</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Nivel 4: Presente Simple -->
-    <div class="lesson" id="level4">
-        <h2>Nivel 4: Presente Simple</h2>
-        <div class="content">
-            <h3>4.1 Uso del Presente Simple</h3>
-            <p>Se usa para acciones habituales:</p>
-            <div class="example">
-                I work every day. = Trabajo todos los días.<br>
-                She studies English. = Ella estudia inglés.<br>
-                We play soccer on weekends. = Jugamos fútbol los fines de semana.
-            </div>
-        </div>
-        <div class="quiz">
-            <h3>Práctica Nivel 4</h3>
-            <div class="question">
-                <p>¿Cuál es la forma correcta del verbo en "He ___ tennis"?</p>
-                <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'C')">A) play</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">B) playing</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) plays</div>
+                    <div class="option" data-correct="false">A) Tree</div>
+                    <div class="option" data-correct="true">B) Book</div>
+                    <div class="option" data-correct="false">C) Water</div>
                 </div>
             </div>
             <div class="question">
-                <p>¿Cómo se traduce "I read books"?</p>
+                <p>¿Qué significa "To go"?</p>
                 <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'B')">A) Yo canto canciones</div>
-                    <div class="option" onclick="checkAnswer(this, 'B')">B) Yo leo libros</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) Yo veo películas</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Nivel 5: Vocabulario y Expresiones -->
-    <div class="lesson" id="level5">
-        <h2>Nivel 5: Vocabulario y Expresiones</h2>
-        <div class="content">
-            <h3>5.1 Expresiones Comunes</h3>
-            <p>Frases útiles para la vida cotidiana:</p>
-            <div class="example">
-                Break a leg! = ¡Buena suerte!<br>
-                It's raining cats and dogs = Está lloviendo a cántaros<br>
-                A piece of cake = Algo muy fácil
-            </div>
-        </div>
-        <div class="quiz">
-            <h3>Práctica Nivel 5</h3>
-            <div class="question">
-                <p>¿Qué significa "Break a leg"?</p>
-                <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'C')">A) Rómpete una pierna</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">B) Ten cuidado</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) Buena suerte</div>
+                    <div class="option" data-correct="false">A) Venir</div>
+                    <div class="option" data-correct="true">B) Ir</div>
+                    <div class="option" data-correct="false">C) Ver</div>
                 </div>
             </div>
             <div class="question">
-                <p>¿Cómo se dice "Está lloviendo a cántaros" en inglés?</p>
+                <p>¿Cómo se dice "Casa" en inglés?</p>
                 <div class="options">
-                    <div class="option" onclick="checkAnswer(this, 'B')">A) It's a sunny day</div>
-                    <div class="option" onclick="checkAnswer(this, 'B')">B) It's raining cats and dogs</div>
-                    <div class="option" onclick="checkAnswer(this, 'C')">C) It's snowing</div>
+                    <div class="option" data-correct="false">A) School</div>
+                    <div class="option" data-correct="true">B) House</div>
+                    <div class="option" data-correct="false">C) Car</div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
     <script>
-        function changeLevel(level) {
-            const lessons = document.querySelectorAll('.lesson');
-            const buttons = document.querySelectorAll('.level-btn');
-
-            lessons.forEach(lesson => lesson.classList.remove('active'));
-            buttons.forEach(button => button.classList.remove('active'));
-
-            document.getElementById('level' + level).classList.add('active');
-            buttons[level - 1].classList.add('active');
-        }
-
-        function checkAnswer(option, correctLetter) {
+        function checkAnswer(option) {
             const options = option.parentElement.children;
-            const selectedLetter = option.innerText.trim().charAt(0);
 
+            // Eliminar clases anteriores
             for (let opt of options) {
                 opt.classList.remove('correct', 'incorrect');
             }
 
-            if (selectedLetter === correctLetter) {
+            // Verificar si la opción seleccionada es correcta
+            if (option.getAttribute('data-correct') === 'true') {
                 option.classList.add('correct');
             } else {
                 option.classList.add('incorrect');
             }
         }
+
+        // Añadir evento de clic a todas las opciones
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', () => checkAnswer(option));
+        });
     </script>
 </body>
 </html>
